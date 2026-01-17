@@ -1,0 +1,9 @@
+---
+const { to, children } = Astro.props;
+---
+
+<li class="nav-item">
+    <a href={to} class="nav-link">
+        <span>{children}</span>
+    </a>
+</li>

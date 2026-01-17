@@ -1,0 +1,31 @@
+---
+import Hamburger from "./Navigation/Hamburger.astro";
+---
+
+<nav
+    class="ftco-navbar-light navbar navbar-expand-lg ftco_navbar site-navbar-target"
+    id="ftco-navbar"
+    navbar"
+>
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <span>C</span>asey Key
+        </a>
+        <Hamburger />
+        <div class="navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav nav ms-auto">
+                <slot />
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const button = document.querySelector(".js-toggle-nav");
+            const nav = document.querySelector(".navbar-collapse");
+            button?.addEventListener("click", () => {
+                nav?.classList.toggle("show");
+            });
+        });
+    </script>
+</nav>

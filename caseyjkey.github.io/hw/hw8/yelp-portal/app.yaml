@@ -1,0 +1,14 @@
+env: standard
+runtime: nodejs22
+instance_class: F1
+automatic_scaling:
+    min_instances: 0
+    max_instances: 1
+
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
+
+env_variables:
+  NEXT_PUBLIC_GOOGLE_API_KEY: AIzaSyAJbN4SHchsN1orl43lWy5fGb0AXMks-Qs

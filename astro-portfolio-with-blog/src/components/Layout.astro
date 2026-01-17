@@ -1,0 +1,42 @@
+---
+import Navigation from "./Navigation.astro";
+import TradLink from "./TradLink.astro";
+// import Scroll from './Scroll.astro'; // if needed
+import "../styles/global.scss";
+---
+
+<html lang="en">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <slot name="head" />
+  <body>
+    <Navigation>
+      <TradLink to="/">Home</TradLink>
+      <TradLink to="/resume">Resume</TradLink>
+      <TradLink to="/blog">Blog</TradLink>
+      <TradLink to="/about">About</TradLink>
+      <!-- <Scroll to="services">Services</Scroll> -->
+      <TradLink to="/projects">Projects</TradLink>
+      <TradLink to="/contact">Contact</TradLink>
+    </Navigation>
+
+    <main>
+      <slot />
+    </main>
+  </body>
+
+  <!-- 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+  ></script>
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof AOS !== "undefined") {
+        AOS.init({ duration: 800, easing: "slide" });
+      }
+      if (typeof initPage === "function") {
+        initPage();
+      }
+    });
+  </script>
+  -->
+</html>

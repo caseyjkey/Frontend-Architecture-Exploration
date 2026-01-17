@@ -1,0 +1,43 @@
+{
+  "section": "About",
+  "bio": "Artificial intelligence's (AI's) societal impact thrills me! My focus is AI, security, and full-stack software engineering. I want to give back by providing jobs, scholarships, and education. <br /><br /> Outside, I enjoy skateboarding, the beach, sports, car tuning, and sound systems. I'm always happy to help, so let's connect.",
+  "activities": [
+    {
+      "activity": {
+        "icon": {
+          "type": "gi",
+          "name": "GiBackpack"
+        },
+        "description": "CS for AI @ USC, SoCal"
+      }
+    },
+    {
+      "activity": {
+        "icon": {
+          "type": "fi",
+          "name": "FiBookOpen"
+        },
+	"description": "<i>Effective Modern C++</i> by Scott Meyer"
+      }
+    },
+    {
+      "activity": {
+        "icon": {
+          "type": "fi",
+          "name": "FiMusic"
+        },
+        "description": "\"Night Drive\" - Wilee"
+      }
+    },
+    {
+      "activity": {
+        "icon": {
+          "type": "fa",
+          "name": "FaLaptopCode"
+        },
+        "description": "https://street-dice.vercel.app/"
+      }
+    }
+  ],
+  "image": "about/images/aboutpic.png"
+}

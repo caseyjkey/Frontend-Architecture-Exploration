@@ -1,0 +1,32 @@
+---
+import Layout from "../components/Layout.astro";
+import Introduction from "../components/Introduction.astro";
+import Skills from "../components/Skills.astro";
+// import Services from '../components/Services.astro';
+// import HireMe from '../components/Hire.astro';
+import Footer from "../components/Footer.astro";
+import SEO from "../components/SEO.astro";
+
+const siteMetadata: any = {
+	title: "Casey Key",
+	description:
+		"Casey Key is a software engineer in California with a focus on education, finance, and security with expertise in cloud-native architecture and full-stack development.",
+	author: "Casey Key",
+	canonical: "https://keycasey.com",
+	siteUrl: "https://keycasey.com",
+	image: "/homepage.png",
+};
+---
+
+<Layout>
+	<SEO
+		title={siteMetadata.title}
+		description={siteMetadata.description}
+		pathname="/"
+	/>
+	<Introduction client:load />
+	<Skills />
+	<!-- <Services /> -->
+	<!-- <HireMe status="available" /> -->
+	<Footer />
+</Layout>

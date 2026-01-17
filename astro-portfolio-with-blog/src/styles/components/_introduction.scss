@@ -1,0 +1,196 @@
+.hero {
+    width: 100%;
+    z-index: 10;
+    height: 100%;
+    position: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: .1;
+    width: 50%;
+    background: $primary-color;
+
+    span.icon {
+        margin-right: 0.7em;
+    }
+}
+
+.content_container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.text {
+    @media (max-width: 767.98px) {
+        margin-top: 6em;
+        max-width: 100%;
+    }
+
+    flex: 1;
+    width: 100%;
+    z-index: 2;
+    max-width: 50%;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+
+    h1.subheader {
+        font-size: 36px;
+        font-weight: 800;
+        color: $primary-color;
+        letter-spacing: 4px;
+    }
+
+    .slider {
+        color: $black;
+        font-size: 2rem;
+        font-weight: 600;
+
+        .header {
+            font-size: 1.2em;
+            //text-decoration: underline;
+        }
+
+        .subheader {
+            font-weight: 600;
+            font-size: 0.8em;
+
+            color: $darken;
+        }
+
+        #name {
+            font-weight: 599;
+            color: $primary-color;
+        }
+
+
+
+    }
+
+    @media (max-width: 767.98px) {
+        .header {
+            font-size: 26px;
+        }
+    }
+}
+
+.svg-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.arrow-container {
+    position: absolute;
+    left: calc(50% - 35px);
+    bottom: 70px;
+}
+
+.btn {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #3e64ff;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background-color: darken(#3e64ff, 10%);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero {
+        h1.subheader {
+            font-size: 1.5rem;
+        }
+
+        .slider {
+            h2.subheader {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+/* ---------- MOBILE 767.98px and below ---------- */
+@media (max-width: 767.98px) {
+
+    /* 1. Overlay takes the whole screen */
+    .overlay {
+        width: 100%;
+    }
+
+    .sitting-svg {
+        bottom: -35px;
+        width: 50%;
+        position: relative;
+
+    }
+
+    /* 2. Stack everything vertically and center it */
+    .content_container {
+        flex-direction: column;
+        /* puts SVG above text */
+        justify-content: center;
+        /* keeps block vertically centered */
+        align-items: center;
+        height: 100vh;
+        /* full viewport height */
+        padding: 0 1rem;
+        /* small left/right safety padding */
+    }
+
+    /* 3. SVG first, text second (optional if markup order already SVG→text) */
+    .svg-container {
+        order: -1;
+        /* forces SVG to render before text */
+        max-width: 70vw;
+        /* trims width on small screens */
+        margin-bottom: 0rem;
+    }
+
+    /* 4. Typewriter block gets a little more width */
+    .text {
+        font-size: 0.5rem;
+        max-width: 90vw;
+        margin-top: -5.5rem;
+        padding-top: 0;
+        /* clears large desktop offset */
+    }
+
+    /* 5. Resume button spacing */
+    .btn {
+        margin-top: 1rem;
+    }
+
+    /* 6. Arrow sits at the very bottom of the viewport */
+    .arrow-container {
+        position: absolute;
+        left: calc(50% - 35px);
+        /* centers arrow horizontally */
+        bottom: 1.75rem;
+        /* keeps arrow visible on tall phones */
+    }
+}
+
+/* ---------- existing rules stay as‑is for desktop ---------- */

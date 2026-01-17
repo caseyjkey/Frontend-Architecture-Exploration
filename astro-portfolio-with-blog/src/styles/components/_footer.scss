@@ -1,0 +1,9 @@
+.footer-icon {
+    opacity: 0;
+    transform: translateY(40px);
+    /* no display:none or visibility:hidden here */
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}

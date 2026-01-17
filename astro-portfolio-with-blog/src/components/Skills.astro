@@ -1,0 +1,118 @@
+---
+import { Skill } from "./Skills/Skill.tsx";
+import skillsData from "../data/introduction/skills.json";
+
+import FullStackSvg from "../assets/skills/fullstack.svg";
+import AiSystemsSvg from "../assets/skills/ai.svg";
+
+const sectionSVGMap: {
+  [id: string]: ((_props: astroHTML.JSX.SVGAttributes) => any) & ImageMetadata;
+} = {
+  "Full Stack Development": FullStackSvg,
+  "AI & Systems Engineering": AiSystemsSvg,
+};
+---
+
+<section id="skills" class="skills-section">
+  <div class="container">
+    <h2 class="section-heading">What I Do</h2>
+
+    {
+      skillsData.sections.map((section, idx) => {
+        const SvgComponent = sectionSVGMap[section.title];
+        return (
+          <div class="section-block" key={section.title}>
+            <div class="grid">
+              <div class="illustration">
+                <SvgComponent class="svg" />
+              </div>
+              <div class="details">
+                <h3 class="subheading">{section.title}</h3>
+                <ul class="icon-grid">
+                  {section.icons.map((icon) => (
+                    <Skill skill={icon.name} icon={icon.icon} />
+                  ))}
+                </ul>
+                <ul class="highlights">
+                  {section.highlights.map((text) => (
+                    <li>&#9889; {text}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
+
+<style lang="scss">
+  .skills-section {
+    padding: 4rem 1rem;
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+    }
+
+    .section-block {
+      margin-bottom: 5rem;
+
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .illustration {
+          flex: 1 1 40%;
+          max-width: 500px;
+
+          .svg {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .details {
+          flex: 1 1 55%;
+
+          .subheading {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-dark);
+          }
+
+          .icon-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 0;
+            list-style: none;
+          }
+
+          .highlights {
+            list-style: none;
+            padding: 0;
+
+            li {
+              font-size: 1rem;
+              line-height: 1.75;
+              margin-bottom: 0.5rem;
+              color: var(--color-dark);
+            }
+          }
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+
+---
+
+<div
+    class="hamburger js-fh5co-nav-toggle fh5co-nav-toggle"
+    id="hamburger"
+    role="button"
+    aria-label="Toggle navigation"
+    aria-expanded="false"
+    aria-controls="site-nav"
+    tabindex="0"
+    client:load
+>
+    <div id="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <script type="module">
+        const icon = document.getElementById("hamburger-icon");
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("site-nav"); // matches Navigation.astro
+
+        let open = false;
+
+        const toggle = () => {
+            open = !open;
+            icon.classList.toggle("open", open);
+            nav?.classList.toggle("show", open);
+        };
+
+        hamburger.addEventListener("click", toggle);
+
+        const onScroll = () => {
+            const isScrolled = window.pageYOffset > 150;
+            hamburger.classList.toggle("scrolled", isScrolled);
+        };
+
+        window.addEventListener("scroll", onScroll);
+        onScroll(); // set initial state
+    </script>
+</div>

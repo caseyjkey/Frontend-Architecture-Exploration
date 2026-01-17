@@ -1,0 +1,30 @@
+{
+  "name": "ecliptic-event",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "astro": "^5.7.5",
+    "bootstrap": "^5.3.5",
+    "react": "^18.3.1",
+    "react-animated-css": "^1.2.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-waypoint": "^10.3.0",
+    "reactstrap": "^9.2.3",
+    "typewriter-effect": "^2.22.0"
+  },
+  "devDependencies": {
+    "@astrojs/react": "^4.2.7",
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.1.2",
+    "sass": "^1.87.0",
+    "typescript": "^5.8.3"
+  }
+}

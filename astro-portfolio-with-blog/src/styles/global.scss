@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@import './theme';
+@import './components/layout';
+@import './components/navigation';
+@import './components/hamburger';
+@import './components/introduction';
+@import './components/footer';
+
+
+body {
+    font-family: $font-primary;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: lighten($black, 60%);
+    background: $white;
+    display: flex;
+    flex-direction: column;
+}
+
+body.menu-show {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.section {
+    position: relative;
+
+    @media (max-width: 767.98px) {
+        padding: 6em 0;
+    }
+}
+
+.no-padding-top {
+    padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0 !important;
+}
+
+.image-bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+h2 {
+    color: $black;
+    position: relative;
+    font-size: 50px;
+    font-weight: 700;
+
+    span {
+        font-weight: 400;
+    }
+
+    @media (max-width: 767.98px) {
+        font-size: 38px;
+    }
+}

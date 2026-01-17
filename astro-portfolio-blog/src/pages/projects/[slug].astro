@@ -1,0 +1,34 @@
+---
+import { type CollectionEntry, getCollection, getEntry } from "astro:content";
+import Project from "@layouts/Project.astro";
+import { getLocale } from "astro-i18n-aut";
+import { DEFAULT_LOCALE } from "../../consts";
+
+export async function getStaticPaths() {
+	const projects = await getCollection("projects", (entry) => entry.id.startsWith(DEFAULT_LOCALE + "/"));
+	return projects.map((project) => ({
+		params: { slug: project.id.replace(`${DEFAULT_LOCALE}/`, "") },
+	}));
+}
+
+type Props = CollectionEntry<"projects">;
+
+const { slug } = Astro.params;
+const locale = getLocale(Astro.url) ?? DEFAULT_LOCALE;
+
+const project = await getEntry({
+	collection: "projects",
+	id: locale + "/" + slug,
+});
+if (!project) {
+	return new Response(null, {
+		status: 404,
+		statusText: "Not found",
+	});
+}
+
+---
+
+<Project {...project.data}>
+	<p class="py-0" set:html={project.data.description}></p>
+</Project>

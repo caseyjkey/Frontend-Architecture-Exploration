@@ -1,0 +1,14 @@
+---
+---
+// Skill Illustration 2 (converted from styled-component SVG)
+<svg class="skill-svg" id="1dff4cb4-53bd-4ffc-acc1-5e8a2ceb72de" width="100%" height="100%" viewBox="0 0 864.81 658.45" xmlns="http://www.w3.org/2000/svg">
+  <!-- SVG content here -->
+</svg>
+<style>
+  .skill-svg .primaryColor {
+    fill: var(--color-primary);
+  }
+  .skill-svg .darkColor {
+    fill: color-mix(in srgb, black 90%, white);
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+import intro from "../data/introduction/introduction.json";
+import SittingSvg from "./SittingSvg.astro";
+import FallingArrow from "./Introduction/FallingArrow.astro";
+import Typewriter from "./Introduction/Typewriter.astro";
+import resume from "../assets/resume.pdf";
+
+const headers = intro.descriptions.map((d) => d.description.header);
+const subheaders = intro.descriptions.map((d) => d.description.subheader);
+---
+
+<section class="hero" id="home">
+  <div class="overlay"></div>
+  <div class="content_container">
+    <div class="text">
+      <h1 class="subheader">{intro.greeting}</h1>
+      <div class="slider">
+        <h2 class="subheader">
+          I'm <span id="name">{intro.name}</span>, the {intro.role}.
+        </h2>
+        <Typewriter headers={headers} subheaders={subheaders} />
+      </div>
+      <a
+        class="btn btn-primary"
+        href={resume}
+        target="_blank"
+        rel="noopener noreferrer">Resume</a
+      >
+    </div>
+    <div class="svg-container">
+      <SittingSvg />
+    </div>
+  </div>
+
+  <div class="arrow-container">
+    <FallingArrow />
+  </div>
+</section>

@@ -1,0 +1,52 @@
+---
+// Typewriter.astro
+interface Props {
+    headers: string[];
+    subheaders: string[];
+    pauseDelay?: number;
+}
+
+const { headers, subheaders, pauseDelay = 7000 } = Astro.props;
+---
+
+<div>
+    <h2 class="subheader" id="pretype">My work centers around being...</h2>
+    <h2 class="subheader" id="typewriter1"></h2>
+    <h2 class="subheader" id="typewriter2"></h2>
+</div>
+
+<script is:inline src="https://unpkg.com/typewriter-effect@latest/dist/core.js"
+></script>
+<script define:vars={{ headers, subheaders, pauseDelay }}>
+    const typewriter1 = new Typewriter(document.getElementById("typewriter1"), {
+        loop: false,
+        delay: 35,
+        deleteSpeed: 10,
+    });
+
+    const typewriter2 = new Typewriter(document.getElementById("typewriter2"), {
+        loop: false,
+        delay: 35,
+    });
+
+    headers.forEach((header, i) => {
+        typewriter1
+            .typeString(header)
+            .callFunction(() => {
+                typewriter2.typeString(subheaders[i]).start();
+            })
+            .pauseFor(pauseDelay)
+            .callFunction(() => {
+                typewriter2.deleteAll(1).start();
+            })
+            .pauseFor(subheaders[i].length * 10)
+            .deleteChars(header.length);
+    });
+
+    typewriter1
+        .typeString("Find me on social media.")
+        .start()
+        .callFunction(() => {
+            document.getElementById("pretype")?.remove();
+        });
+</script>

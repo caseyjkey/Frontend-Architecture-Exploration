@@ -1,0 +1,123 @@
+{
+    "sections": [
+        {
+            "title": "Full Stack Development",
+            "icons": [
+                {
+                    "name": "Python",
+                    "icon": "FaPython"
+                },
+                {
+                    "name": "Swift",
+                    "icon": "GrSwift"
+                },
+                {
+                    "name": "C/C++",
+                    "icon": "FaCuttlefish"
+                },
+                {
+                    "name": "JavaScript",
+                    "icon": "DiJavascript1"
+                },
+                {
+                    "name": "Java",
+                    "icon": "DiJava"
+                },
+                {
+                    "name": "Ruby",
+                    "icon": "DiRuby"
+                },
+                {
+                    "name": "Bash",
+                    "icon": "DiTerminal"
+                },
+                {
+                    "name": "SQL",
+                    "icon": "FaDatabase"
+                },
+                {
+                    "name": "Dart",
+                    "icon": "DiDart"
+                },
+                {
+                    "name": "React",
+                    "icon": "FaReact"
+                },
+                {
+                    "name": "AWS",
+                    "icon": "FaAws"
+                },
+                {
+                    "name": "Google Cloud",
+                    "icon": "SiGooglecloud"
+                },
+                {
+                    "name": "Node.js",
+                    "icon": "DiNodejsSmall"
+                },
+                {
+                    "name": "Ethereum",
+                    "icon": "FaEthereum"
+                },
+                {
+                    "name": "Git",
+                    "icon": "DiGit"
+                },
+                {
+                    "name": "Jenkins",
+                    "icon": "DiJenkins"
+                },
+                {
+                    "name": "Gatsby",
+                    "icon": "GrGatsbyjs"
+                }
+            ],
+            "highlights": [
+                "Architect real-time, event-driven systems using Kafka and queues",
+                "Optimize system availability, performance, and operational efficiency",
+                "Deploy applications with Docker and orchestrate services using Kubernetes",
+                "Build accessible, responsive UIs with modern JavaScript frameworks",
+                "Design robust APIs in Python, integrating SQL and NoSQL databases"
+            ]
+        },
+        {
+            "title": "AI & Systems Engineering",
+            "icons": [
+                {
+                    "name": "Python",
+                    "icon": "FaPython"
+                },
+                {
+                    "name": "PyTorch",
+                    "icon": "SiPytorch"
+                },
+                {
+                    "name": "Jupyter Notebook",
+                    "icon": "SiJupyter"
+                },
+                {
+                    "name": "SQL",
+                    "icon": "FaDatabase"
+                },
+                {
+                    "name": "React",
+                    "icon": "FaReact"
+                },
+                {
+                    "name": "AWS",
+                    "icon": "FaAws"
+                },
+                {
+                    "name": "Git",
+                    "icon": "DiGit"
+                }
+            ],
+            "highlights": [
+                "Implement AI-powered DevOps workflows and automation",
+                "Explore ML techniques for performance tuning and anomaly detection",
+                "Apply data-driven solutions for scalable backend systems",
+                "Study ethical ML practices and Indigenous data sovereignty"
+            ]
+        }
+    ]
+}

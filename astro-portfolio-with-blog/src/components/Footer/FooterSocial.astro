@@ -1,0 +1,6 @@
+---
+import FooterSocialClient from "./FooterSocialClient";
+const { link, icon } = Astro.props;
+---
+
+<FooterSocialClient link={link} icon={icon} client:only="react" />

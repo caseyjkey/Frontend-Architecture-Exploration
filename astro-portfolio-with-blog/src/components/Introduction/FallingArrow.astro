@@ -1,0 +1,73 @@
+---
+import ArrowIcon from "./ArrowIcon.tsx";
+---
+
+<span
+    class="falling-arrow"
+    onClick={() => {
+        const el = document.querySelector('[name="Projects"]');
+        el?.scrollIntoView({ behavior: "smooth" });
+    }}
+>
+    <div class="">
+        <div class="fall-down">
+            <ArrowIcon size={25} class="arrow-icon" client:load />
+        </div>
+    </div>
+</span>
+
+<style lang="scss">
+    .falling-arrow {
+        width: 70px;
+        height: 70px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        z-index: 1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgb(237, 240, 255);
+            z-index: -1;
+            transform: rotate(45deg);
+        }
+    }
+
+    .fall-down {
+        height: 70px;
+        margin: 2px auto 0;
+        width: 30px;
+        background: transparent;
+        border-radius: 50%;
+        animation: wheel-up-down 1.6s ease infinite;
+        color: #3e64ff;
+
+        .arrow-icon {
+            color: #3e64ff;
+            z-index: 1;
+        }
+    }
+
+    @keyframes wheel-up-down {
+        0% {
+            margin-top: -10px;
+            opacity: 0;
+        }
+        30% {
+            opacity: 1;
+        }
+        100% {
+            margin-top: 25px;
+            opacity: 1;
+        }
+    }
+</style>

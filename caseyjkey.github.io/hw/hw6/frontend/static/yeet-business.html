@@ -1,0 +1,82 @@
+<html>
+	<head>
+
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="form">
+			<div id="header">
+				<h1>Business Search</h1>
+				<h2>Fill out the form to get businesses near you!</h2>
+			</div>
+			<div id="body">
+				<form>
+					<label for="term" class="">
+						Keyword<span>*</span>
+					</label>
+					<br>
+					<input type="text" id="term" name="term" />
+					<span class="tooltip top">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-square" viewBox="0 0 16 16">
+							<path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+						</svg>
+						Please fill out this field.
+					</span>
+					<br>
+					<div class="middle" id="left">
+						<label for="radius" class="">
+							Distance(miles)
+						</label>
+						<br>
+						<input value="10" type="text" id="radius" name="radius" />
+					</div>
+					<div class="middle" id="right">
+						<label for="category">Category<span>*</span></label><br>
+						<select name="categories" id="select">
+							<option value="all">Default</option>
+							<option value="arts">Arts & Entertainment</option>
+							<option value="health">Health & Medical</option>
+							<option value="hotelstravel">Hotels & Travel</option>
+							<option value="food">Food</option>
+							<option value="professional">Professional Services</option>
+						</select>
+					</div>
+					<br>
+					<label for="location" class="">Location<span>*</span>
+					</label>
+					<span class="tooltip top" id="distanceTooltip">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-square" viewBox="0 0 16 16">
+							<path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+						</svg>
+						Please fill out this field.
+					</span>
+					<br>
+					<input type="text" name="location" id="location" />
+					<span class="tooltip top">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-square" viewBox="0 0 16 16">
+							<path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+						</svg>
+						Please fill out this field.
+					</span>
+				</form>
+				<hr>
+				<div id="autodetect">
+					<h3>Want us to auto-detect your location? Check here</h3><input type="checkbox" />
+				</div>
+				<button id="submit" class="button">SUBMIT</button><button id="clear" class="button yellow">CLEAR</button>
+			</div>
+		</div>
+		<div id="results">
+			<table>
+			</table>
+		</div>
+		<div id="card">
+		</div>
+
+		<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJbN4SHchsN1orl43lWy5fGb0AXMks-Qs"
+		defer
+	  	></script>
+	  	<script src="script.js"></script>
+	</body>
+</html>
