@@ -2,14 +2,15 @@ env: standard
 runtime: nodejs22
 instance_class: F1
 automatic_scaling:
-    min_instances: 0
-    max_instances: 1
+  min_instances: 0
+  max_instances: 1
 
 handlers:
   - url: /.*
     secure: always
     script: auto
 
-# IMPORTANT: Set NEXT_PUBLIC_GOOGLE_API_KEY in Google Cloud Console
+# IMPORTANT: Set NEXT_PUBLIC_GOOGLE_API_KEY in Google Cloud Console:
+# App Engine → Services → default → click version → Edit → Environment variables
 env_variables:
   NEXT_PUBLIC_GOOGLE_API_KEY: ""

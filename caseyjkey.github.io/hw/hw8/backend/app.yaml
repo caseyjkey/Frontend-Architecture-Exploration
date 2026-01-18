@@ -7,7 +7,8 @@ automatic_scaling:
   min_instances: 0
   max_instances: 1
 
-# IMPORTANT: Set these environment variables in Google Cloud Console
+# IMPORTANT: Set these environment variables in Google Cloud Console:
+# App Engine → Services → api → click version → Edit → Environment variables
 env_variables:
-    YELP: ""
-    IP_INFO_TOKEN: ""
+  YELP: ""
+  IP_INFO_TOKEN: ""
