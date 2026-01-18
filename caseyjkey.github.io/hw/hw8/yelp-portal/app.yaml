@@ -10,5 +10,6 @@ handlers:
     secure: always
     script: auto
 
+# IMPORTANT: Set NEXT_PUBLIC_GOOGLE_API_KEY in Google Cloud Console
 env_variables:
-  NEXT_PUBLIC_GOOGLE_API_KEY: AIzaSyAJbN4SHchsN1orl43lWy5fGb0AXMks-Qs
+  NEXT_PUBLIC_GOOGLE_API_KEY: ""

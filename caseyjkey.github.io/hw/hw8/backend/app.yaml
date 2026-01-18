@@ -1,6 +1,13 @@
-runtime: nodejs16
+runtime: nodejs20
 
 service: api
 
+instance_class: F1
+automatic_scaling:
+  min_instances: 0
+  max_instances: 1
+
+# IMPORTANT: Set these environment variables in Google Cloud Console
 env_variables:
-    YELP: nBmeRJk3LJyzbKlVHA2WA0tjcF_wvERiRSVvNiPzoKhUFgwKk3_RWdOqGvR7Llf0wgDoxPP4MzOW0H1gNn6aKMJjJzCLkC5MgYg7JBWFNXkbxjEIfwzvQMcpTDIxY3Yx
+    YELP: ""
+    IP_INFO_TOKEN: ""

@@ -7,6 +7,7 @@ app.use(cors());
 const port = process.env.PORT || 8081;
 
 const apiKey = process.env.YELP;
+const ipInfoToken = process.env.IP_INFO_TOKEN;
 
 app.get('/search', (req, res) => {
     console.log('serc', req.query);
@@ -97,13 +98,31 @@ app.get('/reviews', (req, res) => {
         .then(function (response) {
             console.log(response.data)
             return JSON.stringify(response.data, null, 2)
-        }) 
+        })
         .then(function (jsonResponse) {
             res.status(200).send(jsonResponse);
-        }) 
+        })
         .catch(function (error) {
             res.status(500).send({ error: error });
             console.log(id, error);
+        });
+});
+
+app.get('/location', (req, res) => {
+    console.log('Getting location from ipinfo.io');
+    let config = {
+        method: 'get',
+        url: `https://ipinfo.io/json?token=${ipInfoToken}`,
+        timeout: 5000
+    };
+
+    axios(config)
+        .then(function (response) {
+            res.status(200).send({ loc: response.data.loc });
+        })
+        .catch(function (error) {
+            res.status(500).send({ error: 'Failed to get location' });
+            console.log('Location error:', error.message);
         });
 });
 

@@ -8,7 +8,7 @@ import BusinessCard from '../components/BusinessCard'
 import styles from '../styles/Search.module.css'
 import {Loader} from '@googlemaps/js-api-loader';
 
-const IP_INFO_TOKEN = "7c62390b3fc18d";
+// IP info token is now on backend - no client-side secret needed
 
 export default function Search() {
     const [API_URI, setAPI] = React.useState('https://api-dot-next-yelp-shops.wl.r.appspot.com');
@@ -152,8 +152,10 @@ export default function Search() {
     const getLocation = async () => {
         let location = null;
         try {
-            let response = await fetch(`https://ipinfo.io/json?token=${IP_INFO_TOKEN}`);
-            location = (await response.json()).loc;
+            // Call backend instead of ipinfo.io directly - avoids CORS and keeps secret secure
+            let response = await fetch(`${API_URI}/location`, {mode: 'cors'});
+            let data = await response.json();
+            location = data.loc;
         } catch (e) {
             console.error(e);
         }
